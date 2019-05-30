@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+  truffle:
+    build: truffle
+    container_name: truffle
+    hostname: truffle
+    working_dir: /app
+    volumes:
+      - ./src:/app:cached
+    tty: true
+    depends_on:
+      - ganache
+    ports:
+      - 3000:3000
+      - 3001:3001
+  ganache:
+    build: ganache
+    container_name: ganache
+    hostname: ganache
+    restart: always
+    ports:
+      - 8545:8545
+    volumes:
+      - ./ganache-data:/var/ganache
