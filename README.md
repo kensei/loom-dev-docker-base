@@ -1,4 +1,4 @@
-# sol dev env
+# loom dev env
 
 ## init project template
 

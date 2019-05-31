@@ -11,6 +11,7 @@ services:
     tty: true
     depends_on:
       - ganache
+      - loom
     ports:
       - 3000:3000
       - 3001:3001
@@ -22,4 +23,15 @@ services:
     ports:
       - 8545:8545
     volumes:
-      - ./ganache-data:/var/ganache
+      - ./ganache/ganache-data:/var/ganache
+  loom:
+    build: loom
+    container_name: loom
+    hostname: loom
+    restart: always
+    tty: true
+    ports:
+      - 46657:46657
+    volumes:
+      - ./loom/chaindata:/home/node/chaindata
+      - ./loom/genesis.json:/home/node/genesis.json
