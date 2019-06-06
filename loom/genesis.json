@@ -5,7 +5,10 @@
             "format": "plugin",
             "name": "coin",
             "location": "coin:1.0.0",
-            "init": null
+            "init": {
+                "accounts": [
+                ]
+            }
         },
         {
             "vm": "plugin",

@@ -1,5 +1,24 @@
 # loom dev env
 
+## initialize
+
+`docker-compose build`
+
+## start
+
+`docker-compose up -d`
+
+## loom reset
+
+```
+docker exec loom loom reset
+docker exec loom loom init
+```
+
+## genkey
+
+`docker exec loom loom genkey -a pubkey -k privkey`
+
 ## init project template
 
 ### empty project
